@@ -7,11 +7,6 @@
     </div>
   </nav>
   <main>
-    <div>
-      <app-profile-info [userData]="user"></app-profile-info>
-    </div>
-    <div>
-      <app-project-details *ngFor="let repo of repos" [repoData]="repo"></app-project-details>
-    </div>
+    <router-outlet></router-outlet>
   </main>
 </body>

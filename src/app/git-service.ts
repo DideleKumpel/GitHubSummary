@@ -21,6 +21,10 @@ export class GitService {
     return this.httpClient.get<RepoInterface[]>(`${this.baseApiUrl}/users/${username}/repos`)
   } 
 
+  getSingleRepo(username: string, repoName: string): Observable<RepoInterface> {
+    return this.httpClient.get<RepoInterface>(`${this.baseApiUrl}/repos/${username}/${repoName}`);
+  }
+
   getCommits(username: string, repoName: string): Observable<CommitInterface[]> {
     return this.httpClient.get<CommitInterface[]>(
       `${this.baseApiUrl}/repos/${username}/${repoName}/commits?per_page=20`
