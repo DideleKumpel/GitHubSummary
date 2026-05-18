@@ -13,9 +13,9 @@ import { RepoInterface } from '../repo-interface';
     <div>
       <app-project-details [repoData]="repo()"></app-project-details>
     </div>
-    <section>
+    <section class="commits-section">
       @for (commit of commits(); track commit.sha) {
-      <div>
+      <div class="commit-details">
         <h2>Message: {{ commit.commit.message }}</h2>
         <h2>Author: {{ commit.commit.author.name }}</h2>
         <h2>Date: {{ commit.commit.author.date }}</h2>

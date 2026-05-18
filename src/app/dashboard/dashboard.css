@@ -1,0 +1,32 @@
+.container {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: var(--border-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-section {
+    margin: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-section h1 {
+    margin-bottom: 20px;
+}
+
+.projects-section {
+    margin: 10px;
+    padding: 20px;
+}
+
+.projects-section h1 {
+    margin-bottom: 20px;
+}

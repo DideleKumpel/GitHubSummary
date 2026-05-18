@@ -6,13 +6,13 @@ import { UserInterface } from '../user-interface';
   selector: 'app-profile-info',
   imports: [],
   template: `
-    <div class="profileInfo">
+    <div class="profile-info">
       <img [src]="userData?.avatar_url">
       <div>
-        <h1>{{ userData?.name }}</h1>
-        <h2>{{ userData?.login}}</h2>
+        <h1>{{ userData?.login}}</h1>
+        <h2>{{ userData?.name }}</h2>
+        <a [href]="userData?.html_url" target="_blank">View on github</a>
       </div>
-      <a>{{ userData?.html_url}}</a>
     </div>
   `,
   styleUrl: './profile-info.css',

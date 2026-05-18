@@ -1,0 +1,29 @@
+.project-details {
+    display: inline-block;
+  width: 100%;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.project-details h1 {
+  margin-bottom: 8px;
+}
+
+.project-details article {
+  margin-bottom: 8px;
+}
+
+.github-link, .commits-link {
+    margin-bottom: 8px;
+}
+
+.project-details p {
+    display: inline;
+}
+
+.project-details a {
+    display: inline;
+}

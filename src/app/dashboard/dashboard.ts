@@ -11,12 +11,24 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule ,ProfileInfo, ProjectDetails],
-  template: ` <div>
-      <app-profile-info [userData]="user()"></app-profile-info>
+  template: ` 
+    <div class="container">
+      <section class="profile-section">
+        <h1>Profile Info</h1>
+        <div>
+          <app-profile-info [userData]="user()"></app-profile-info>
+        </div>
+      </section>
+      <section class="projects-section">
+        <h1>Projects:</h1>
+        @for (repo of repos(); track repo.name) {
+          <app-project-details [repoData]="repo" [username]="user()?.login"></app-project-details>
+        }@empty {
+          <h2>User don't have public projects</h2>
+        }
+      </section> 
     </div>
-    <div>
-      <app-project-details *ngFor="let repo of repos()" [repoData]="repo" [username]="user()?.login"></app-project-details>
-    </div> `,
+    `,
   styleUrl: './dashboard.css',
 })
 export class Dashboard {

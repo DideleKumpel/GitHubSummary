@@ -11,11 +11,21 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   template: `
-      <div>
+      <div class="project-details">
         <h1> {{ repoData?.name}}</h1>
-        <article> {{ repoData?.description}} </article>
+        @if(repoData?.description) {
+          <article> {{ repoData?.description}} </article>
+        }@else {
+          <article> No description provided </article>
+        }
+        <div class="github-link">
+        <p>Link to GitHub: </p>
         <a [href]="repoData?.html_url" target="_blank"> {{repoData?.html_url}} </a>
+        </div>
+        <div class="commits-link">
+        <p>Check commits: </p>
         <a [routerLink]="['/repo', username, repoData?.name]">View Commits</a>
+        </div>
       </div>
    `,
   styleUrl: './project-details.css',

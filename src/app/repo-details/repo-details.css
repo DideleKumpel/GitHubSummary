@@ -1,0 +1,18 @@
+.commits-section {
+  display: inline-block;
+  width: 100%;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.commit-details {
+    margin: 10px;
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
