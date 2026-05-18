@@ -15,7 +15,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--text-color);
 }
 
