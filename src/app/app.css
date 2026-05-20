@@ -3,20 +3,18 @@
   padding: 0;
 }
 
-:root {
-  --primary-color: #222222;
-  --secondary-color: #000000;
-  --accent-color: #1DCD9F;
-  --border-color: #169976;
-  --shadow-color: #E8E8E8;
-  --text-color: #E8E8E8;
+nav{
+  background-color: var(--secondary-color);
+  border-bottom: var(--border-color) 2px solid;
+}
+nav .container{
+  background-color: var(--secondary-color);
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
 
-  padding: 20px 30px;
   margin: 0 auto;
 
   display: flex;

@@ -12,19 +12,17 @@ import { ActivatedRoute } from '@angular/router';
   imports: [CommonModule, RouterLink],
   template: `
       <div class="project-details">
-        <h1> {{ repoData?.name}}</h1>
-        @if(repoData?.description) {
-          <article> {{ repoData?.description}} </article>
-        }@else {
-          <article> No description provided </article>
-        }
-        <div class="github-link">
-        <p>Link to GitHub: </p>
-        <a [href]="repoData?.html_url" target="_blank"> {{repoData?.html_url}} </a>
+        <div class="repo-header">
+          <h1> {{ repoData?.name}}</h1>
+          @if(repoData?.description) {
+            <article> {{ repoData?.description}} </article>
+          }@else {
+            <article> No description provided </article>
+          }
         </div>
-        <div class="commits-link">
-        <p>Check commits: </p>
-        <a [routerLink]="['/repo', username, repoData?.name]">View Commits</a>
+        <div class="repo-link">
+          <a [href]="repoData?.html_url" target="_blank"> View on GitHub </a>
+          <a [routerLink]="['/repo', username, repoData?.name]">View Commits</a>
         </div>
       </div>
    `,

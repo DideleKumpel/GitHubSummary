@@ -8,14 +8,15 @@
   --primary-color: #222222;
   --secondary-color: #000000;
   --accent-color: #1DCD9F;
-  --border-color: #169976;
+  --border-color: #F2F0EF;
+  --secondary-border-color: #808080;
   --shadow-color: #E8E8E8;
   --text-color: #E8E8E8;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--text-color);
 }
 
@@ -32,7 +33,17 @@ h3{
     font-size: 22px;
 }
 
-a {
+a{
+  border: var(--accent-color) 2px solid;
+  border-radius: 10px;
+  padding: 6px 12px;
+  margin: 10px;
+  justify-content: center;
   color: var(--accent-color);
   text-decoration: none;
+}
+
+a:hover {
+  background-color: var(--accent-color);
+  color: white;
 }

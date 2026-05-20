@@ -1,29 +1,28 @@
 .project-details {
-    display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 90%;
   margin: 10px auto;
-  border: 1px solid #ccc;
-  padding: 16px;
+  border-bottom: var(--border-color) 2px solid;
+  padding: 24px;
   margin-bottom: 16px;
-  border-radius: 8px;
+}
+
+.repo-header , .repo-link {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.repo-link {
+  min-width: 160px;
 }
 
 .project-details h1 {
   margin-bottom: 8px;
 }
 
-.project-details article {
-  margin-bottom: 8px;
-}
-
 .github-link, .commits-link {
     margin-bottom: 8px;
-}
-
-.project-details p {
-    display: inline;
-}
-
-.project-details a {
-    display: inline;
 }
