@@ -5,6 +5,7 @@ import { signal } from '@angular/core';
 import { GitService } from '../git-service';
 import { ActivatedRoute } from '@angular/router';
 import { RepoInterface } from '../repo-interface';
+import { listAnimation } from '../shared/animations';
 
 @Component({
   selector: 'app-repo-details',
@@ -13,9 +14,9 @@ import { RepoInterface } from '../repo-interface';
     <div>
       <app-project-details [repoData]="repo()"></app-project-details>
     </div>
-    <section class="commits-section">
+    <section class="commits-section" [@listAnimation]="commits().length">
       @for (commit of commits(); track commit.sha) {
-      <div class="commit-details">
+      <div class="commit-details animate-list-appear">
         <h2>Message: {{ commit.commit.message }}</h2>
         <h2>Author: {{ commit.commit.author.name }}</h2>
         <h2>Date: {{ commit.commit.author.date }}</h2>
@@ -23,6 +24,7 @@ import { RepoInterface } from '../repo-interface';
       }
     </section>
   `,
+  animations: [listAnimation],
   styleUrl: './repo-details.css',
 })
 export class RepoDetails {

@@ -7,6 +7,7 @@ import { signal } from '@angular/core';
 import { GitService } from '../git-service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { listAnimation } from '../shared/animations';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,10 +20,10 @@ import { CommonModule } from '@angular/common';
           <app-profile-info [userData]="user()"></app-profile-info>
         </div>
       </section>
-      <section class="projects-section">
+      <section class="projects-section" [@listAnimation]="repos().length">
         <h1>Projects:</h1>
         @for (repo of repos(); track repo.name) {
-          <app-project-details [repoData]="repo" [username]="user()?.login"></app-project-details>
+          <app-project-details class="animate-list-appear" [repoData]="repo" [username]="user()?.login"></app-project-details>
         }@empty {
           <h2>User don't have public projects</h2>
         }
@@ -30,6 +31,7 @@ import { CommonModule } from '@angular/common';
     </div>
     `,
   styleUrl: './dashboard.css',
+  animations: [listAnimation]
 })
 export class Dashboard {
   protected readonly gitService = inject(GitService);
