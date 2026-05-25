@@ -11,6 +11,7 @@ import { listAnimation } from '../shared/animations';
   selector: 'app-repo-details',
   imports: [ProjectDetails],
   template: `
+  <div class="container">
     <div>
       <app-project-details [repoData]="repo()"></app-project-details>
     </div>
@@ -23,6 +24,7 @@ import { listAnimation } from '../shared/animations';
       </div>
       }
     </section>
+  </div>
   `,
   animations: [listAnimation],
   styleUrl: './repo-details.css',

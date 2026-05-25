@@ -47,3 +47,20 @@ a:hover {
   background-color: var(--accent-color);
   color: white;
 }
+
+
+input{
+    padding: 10px 15px;
+    
+    width: 92%;
+
+    background: rgba(255, 255, 255, 0.692);
+    backdrop-filter: blur(20px);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: white;
+
+    font-size: 24px;
+}

@@ -1,17 +1,30 @@
 import { Component, inject, signal } from '@angular/core';
-import { GitService } from './git-service';
-import { UserInterface } from './user-interface';
+import { GitService } from '../git-service';
+import { UserInterface } from '../user-interface';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-home-page',
   imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  template: `
+  <div class="welcome-container">
+    <div class="search-box">
+      <h1>GitHub Summary</h1>
+      <p>Search for a GitHub user to generate their summary dashboard</p>
+      <div class="main-search-bar">
+        <input type="text" placeholder="Find github profile..."
+               [(ngModel)]="searchText"
+               (keyup.enter)="searchUser()">
+        <button (click)="searchUser()">Search</button>
+      </div>
+    </div>
+  </div>
+  `,
+  styleUrl: './home-page.css',
 })
-export class App {
+export class HomePage {
   protected readonly title = signal('GitHubSummary');
   protected readonly gitService = inject(GitService);
   router: Router = inject(Router);
@@ -19,10 +32,6 @@ export class App {
   searchText: string = "";
 
   user = signal<UserInterface | undefined>(undefined);
-
-  isHomePage(): boolean {
-    return this.router.url === '/';
-  }
 
   searchUser(): void{
     if(this.searchText.trim() === ""){
@@ -44,5 +53,4 @@ export class App {
       }
     );
   }
-
 }
